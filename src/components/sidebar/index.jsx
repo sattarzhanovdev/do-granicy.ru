@@ -28,7 +28,7 @@ const Sidebar = ({active, setActive}) => {
   }
 
   const scrollToContacts = () => {
-    window.scrollTo(0, 6480.5)
+      window.scrollTo(0, 6480.5)
   }
 
   return (

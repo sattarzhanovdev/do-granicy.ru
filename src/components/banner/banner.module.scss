@@ -10,14 +10,14 @@
     align-items: center;
     padding: 0 10%;
     position: relative;
-    @media (max-width: 990px) {
+    @media (max-width: 1000px) {
       flex-direction: column-reverse;
       padding: 0 5%;
       padding-bottom: 25px;
     }
     .left{
       width: 50%;
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         width: 100%;
       }
       h1{
@@ -43,7 +43,7 @@
         display: flex;
         margin-top: 50px;
         
-        @media (max-width: 425px) {
+        @media (max-width: 494px) {
           flex-direction: column;
         }
         button{
@@ -124,7 +124,7 @@
         left: 0;
         opacity: 0.22;
       }
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         position: relative;
         width: 100%;
         clip-path: circle(65% at 50% 10%);
