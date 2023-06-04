@@ -14,7 +14,7 @@ const Contacts = () => {
           <a href="https://yandex.ru/maps/213/moscow/?ll=37.676861%2C55.718050&utm_medium=mapframe&utm_source=maps&z=18.67" style={{color:'#eee', fontSize:'12px', position:'absolute', top:'14px'}}>
             Москва — Яндекс Карты
           </a>
-          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.676861%2C55.718050&z=18.67" width="100%" height="600" frameborder="1" allowfullscreen="true" style={{position:'relative'}}></iframe>
+          <iframe src="https://yandex.ru/map-widget/v1/?ll=37.676861%2C55.718050&z=18.67" height="600" frameborder="1" allowfullscreen="true" style={{position:'relative'}}></iframe>
           <div className={c.contacts_block}>
             <h1>Контакты</h1>
             <li>
