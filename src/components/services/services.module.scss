@@ -1,0 +1,105 @@
+.services_container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #1d1d1d;
+  .services{
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    flex-direction: column;
+    padding: 25px 0;
+    h1{
+      font-size: 35px;
+      color: white;
+      margin: 0;
+    }
+    .cards{
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      margin-top: 25px;
+      @media (max-width: 990px) {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .card{
+        width: 300px;
+        height: 500px;
+        padding: 0 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        border-radius: 25px;
+        position: relative;
+
+        @media (max-width: 1212px) {
+          width: 240px;
+        }
+
+        @media (max-width: 990px) {
+          width: 300px;
+        }
+
+        @media (max-width: 375px) {
+          width: 280px;
+        }
+
+        @media (max-width: 320px) {
+          width: 240px;
+        }
+
+        &::before{
+          content: '';
+          width: 100%;
+          height: 100%;
+          background: rgba($color: #000000, $alpha: 0.8);
+          border-radius: 25px;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+
+        &:nth-child(1){
+          background: url('https://m-files.cdnvideo.ru/lpfile/2/0/9/209aceaa49d8ee762460fd99f95dd8f5/-/resize/2000/f.jpeg?51337497') center / cover;
+        }
+
+        &:nth-child(2){
+          background: url('https://m-files.cdnvideo.ru/lpfile/4/0/1/4016f82425f84e489f0632d41d663897/-/resize/2000/f.jpeg?69561383') center / cover;
+        }
+
+        &:nth-child(3){
+          background: url('https://m-files.cdnvideo.ru/lpfile/5/7/8/57843b84fa7e2620ea62e0569664c0cf/-/resize/2000/f.jpeg?3355571') center / cover;
+        }
+
+        h2{
+          text-align: center;
+          color: white;
+          z-index: 1;
+        }
+        p{
+          text-align: center;
+          color: white;
+          font-family: Arial, Helvetica, sans-serif;
+          z-index: 1;
+        }
+        button{
+          width: 180px;
+          height: 56px;
+          background: none;
+          border: 3px solid #c27c7c;
+          border-radius: 5px;
+          color: white;
+          margin-top: 15px;
+          z-index: 1;
+          cursor: pointer;
+          &:hover{
+            background: #c27c7c;
+          }
+        }
+      }
+    }
+  }
+}
