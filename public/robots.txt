@@ -1,3 +1,11 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
 Disallow:
+
+User-agent: Yandex
+Disallow:
+
+User-agent: Googlebot
+Disallow:
+
+Host: do-granicy.ru
+Sitemap: https://do-granicy.ru//sitemap.xml
