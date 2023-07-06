@@ -1,7 +1,7 @@
 import React from 'react'
 import c from './sidebar.module.scss'
 import { navlist } from '../../utils'
-import { Link } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { AiOutlineClose } from 'react-icons/ai'
 
 const Sidebar = ({active, setActive}) => {
@@ -28,8 +28,10 @@ const Sidebar = ({active, setActive}) => {
   }
 
   const scrollToContacts = () => {
-      window.scrollTo(0, 6480.5)
+    window.scrollTo(0, 6480.5)
   }
+
+  const Navigate = useNavigate()
 
   return (
     <div className={active ? c.sidebar : c.sidebar_none}>
@@ -49,8 +51,10 @@ const Sidebar = ({active, setActive}) => {
                   scrollToQuaranty()
                 }else if(item.title.toLowerCase() === 'услуги'){
                   scrollToServices()
-                }else{
+                }else if(item.title.toLowerCase() === 'контакты'){
                   scrollToContacts()
+                }else{
+                  Navigate('/news/')
                 }
                 setActive(false)
               }}
