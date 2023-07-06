@@ -6,7 +6,7 @@ const Services = () => {
   const [ active, setActive ] = React.useState(false)
 
   return (
-    <section className={c.services_container}>
+    <section className={c.services_container} id='services'>
       <div className={c.services}>
         <h1>
           Наши услуги
@@ -15,10 +15,7 @@ const Services = () => {
           <div className={c.card}>
             <h2>Такси на границу Казахстана</h2>
             <p>
-              Поездка на Toyota Alphard <br />
-              Оплата при посадке <br />
-              Отправка ежедневно в 18.00 <br />
-              Общее время поездки 34 часа
+              Ежедневно в 18:00 отправляется поездка на Toyota Alphard, продолжительностью 34 часа.
             </p>
             <button onClick={() => setActive(true)}>Заказать</button>
           </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import c from './navbar.module.scss'
 import { navlist } from '../../utils'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaBars } from 'react-icons/fa'
 import Sidebar from '../sidebar'
 
@@ -11,7 +11,7 @@ const Navbar = () => {
   const scrollToQuaranty = () => {
     const pageWidth = window.innerWidth
 
-    if(pageWidth <= 1440){
+    if(pageWidth >= 1440 || pageWidth <= 1440  ){
       window.scrollTo(0, 2274)
     }else if(pageWidth === 2560){
       window.scrollTo(0, 3256)
@@ -22,7 +22,7 @@ const Navbar = () => {
   const scrollToServices = () => {
     const pageWidth = window.innerWidth
 
-    if(pageWidth <= 1440){
+    if(pageWidth <= 1440 || pageWidth >= 1440){
       window.scrollTo(0, 1142)
     }else if(pageWidth === 2560){
       window.scrollTo(0, 1485)
@@ -31,19 +31,15 @@ const Navbar = () => {
   }
 
   const scrollToContacts = () => {
-    window.scrollTo(0, 4762.5 )
+    window.scrollTo(0, 4762.5)
   }
 
-  window.onscroll = () => {
-    const pageWidth = window.scrollY
-
-    console.log(pageWidth);
-  }
-
+  const Navigate = useNavigate()
+  
   return (
     <section className={c.navbar_container}>
       <div className={c.navbar}>
-        <h1>
+        <h1 onClick={() => Navigate('/')}>
           До Границы.РУ
         </h1>
         <ul className={c.list}>
@@ -52,12 +48,21 @@ const Navbar = () => {
               <li 
                 key={item.id}
                 onClick={() => {
-                  if(item.title.toLowerCase() === 'о компании'){
-                    scrollToQuaranty()
-                  }else if(item.title.toLowerCase() === 'услуги'){
-                    scrollToServices()
-                  }else if(item.title.toLowerCase() === 'контакты'){
-                    scrollToContacts()
+                  console.log(item.title);
+
+                  switch (item.title.toLowerCase()) {
+                    case 'о компании' :
+                      scrollToQuaranty()
+                      break;
+                    case 'услуги' :
+                      scrollToServices()
+                      break;
+                    case 'контакты' :
+                      scrollToContacts()
+                      break;
+                    case 'новости' :
+                      Navigate(item.path)
+                      break;
                   }
                 }}
               >

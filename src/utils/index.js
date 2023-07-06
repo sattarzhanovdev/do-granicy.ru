@@ -5,6 +5,7 @@ export const navlist = [
   {id: 1, title: 'о компании', path: '/about/'},
   {id: 2, title: 'услуги', path: '/services/'},
   {id: 3, title: 'контакты', path: '/contacts/'},
+  {id: 4, title: 'новости', path: '/news/'},
 ]
 
 export const quarantylist = [
