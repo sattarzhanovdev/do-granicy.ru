@@ -13,6 +13,16 @@ const More = () => {
         <div className={c.body}>
           <h1>{item.title}</h1>
           <p>{item.desc}</p>
+          <div className={c.more_info}>
+            {
+              item?.themes?.map((value, i) => (
+                <div key={i}>
+                  <h4>{value.topic}</h4>
+                  <p>{value.text}</p>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>

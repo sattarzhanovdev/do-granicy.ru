@@ -24,6 +24,20 @@
         color: white;
         font-family: Arial, Helvetica, sans-serif;
       }
+      .more_info{
+        margin-top: 50px;
+        div{
+          margin-top: 30px;
+          h4{
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+          }
+          p{
+            color: rgba($color: white, $alpha: 60%);
+          }
+        }
+      }
     }
   }
 }
