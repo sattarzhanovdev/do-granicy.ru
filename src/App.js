@@ -7,25 +7,25 @@ import { Pages } from './pages'
 const App = () => {
   return (
     <div>
-    <header>
-      <Components.Navbar />
-    </header>
-    <main>
-      <Routes>
-        <Route 
-          path='/'
-          element={<Pages.Main />}
-        />
-        <Route
-          path='/news/'
-          element={<Pages.News />}
-        />
-        <Route
-          path='/more/'
-          element={<Pages.More />}
-        />
-      </Routes>
-    </main>
+      <header>
+        <Components.Navbar />
+      </header>
+      <main>
+        <Routes>
+          <Route 
+            path='/'
+            element={<Pages.Main />}
+          />
+          <Route
+            path='/news/'
+            element={<Pages.News />}
+          />
+          <Route
+            path='/more/'
+            element={<Pages.More />}
+          />
+        </Routes>
+      </main>
     </div>
   )
 }
