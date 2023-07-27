@@ -21,7 +21,7 @@ const App = () => {
             element={<Pages.News />}
           />
           <Route
-            path='/more/'
+            path='/:title/'
             element={<Pages.More />}
           />
         </Routes>

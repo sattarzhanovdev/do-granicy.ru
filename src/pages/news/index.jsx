@@ -46,7 +46,7 @@ const News = () => {
                     <button
                       onClick={() => {
                         localStorage.setItem('moreNew', JSON.stringify(item))
-                        Navigate('/more/')
+                        Navigate(`/${item.title}/`)
                       }}
                     >
                       Подробнее
