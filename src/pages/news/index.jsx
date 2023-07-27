@@ -39,7 +39,7 @@ const News = () => {
 
                       <h1>{item.title}</h1>
                       <p>
-                        {item.desc}
+                        {item.desc.length > 100 ? `${item.desc.slice(0, 100)}...` : item.desc}
                       </p>
                   </div>
                   <div className={c.footer_post}>
