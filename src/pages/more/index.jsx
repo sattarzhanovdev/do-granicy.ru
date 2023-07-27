@@ -1,18 +1,38 @@
 import React from 'react'
 import c from './more.module.scss'
+import { useParams } from 'react-router-dom'
+import { API } from '../../api'
 
 const More = () => {
-  const item = JSON.parse(localStorage.getItem('moreNew'))
+  const [ item, setItem ] = React.useState(null)
+  const params = useParams()
+
   
+  React.useEffect(() => {
+    API.getNews() 
+      .then(res => {
+        const result = Object.entries(res.data)
+          .map(([id, item]) => {
+            return {
+              ...item
+            }
+          })
+        const foundItem = result.find(value => value.title.toLowerCase() === params.title.toLowerCase())
+        
+        setItem(foundItem)
+      })
+  }, [])
+
+
   return (
     <div className={c.more_container}>
       <div className={c.more}>
         <div className={c.head}>
-          <img src={item.image} alt="" />
+          <img src={item?.image} alt="" />
         </div>
         <div className={c.body}>
-          <h1>{item.title}</h1>
-          <p>{item.desc}</p>
+          <h1>{item?.title}</h1>
+          <p>{item?.desc}</p>
           <div className={c.more_info}>
             {
               item?.themes?.map((value, i) => (

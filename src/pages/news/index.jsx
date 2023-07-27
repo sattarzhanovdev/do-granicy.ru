@@ -45,7 +45,6 @@ const News = () => {
                   <div className={c.footer_post}>
                     <button
                       onClick={() => {
-                        localStorage.setItem('moreNew', JSON.stringify(item))
                         Navigate(`/${item.title}/`)
                       }}
                     >
