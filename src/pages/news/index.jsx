@@ -36,16 +36,15 @@ const News = () => {
 
               <div class={c.body_post}>
                   <div class={c.post_content}>
-
-                      <h1>{item.title}</h1>
-                      <p>
-                        {item.desc.length > 100 ? `${item.desc.slice(0, 100)}...` : item.desc}
-                      </p>
+                    <h1>{item.title}</h1>
+                    <p>
+                      {item.desc.length > 100 ? `${item.desc.slice(0, 100)}...` : item.desc}
+                    </p>
                   </div>
                   <div className={c.footer_post}>
                     <button
                       onClick={() => {
-                        Navigate(`/${item.title}/`);
+                        Navigate(`/${item.latin}/`)
                       }}
                     >
                       Подробнее

@@ -7,18 +7,19 @@ const More = () => {
   const [ item, setItem ] = React.useState(null)
   const params = useParams()
 
+
   const latinToCyrillic = {
+    a: "а", b: "б", c: "ц", d: "д", e: "е", f: "ф", g: "г", h: "х", i: "и", j: "ж", k: "к", l: "л",
+    m: "м", n: "н", o: "о", p: "п", q: "к", r: "р", s: "с", t: "т", u: "у", v: "в", w: "в", x: "кс",
+    y: "ы", z: "з",
     A: "А", B: "Б", C: "Ц", D: "Д", E: "Е", F: "Ф", G: "Г", H: "Х", I: "И", J: "Ж", K: "К", L: "Л",
     M: "М", N: "Н", O: "О", P: "П", Q: "К", R: "Р", S: "С", T: "Т", U: "У", V: "В", W: "В", X: "Кс",
-    Y: "Ы", Z: "З",
-    CH: "Ч", SH: "Ш", SCH: "Щ", YO: "Ё", YA: "Я",
-    YU: "Ю", ZH: "Ж", KH: "Х", TS: "Ц", TH: "З", TSIA: "ЦИЯ", TSII: "ЦИИ",
-    TSIU: "ЦИЮ", TSIE: "ЦИИ", TSIIU: "ЦИЮ",
-    TSY: "ЦИ", TSYU: "ЦИЮ"
-  };
+    Y: "Ы", Z: "З"
+  }
   
 
   React.useEffect(() => {
+    const text = params.title.replace(/[a-zA-Z]/g, match => latinToCyrillic[match] || match);
     API.getNews() 
       .then(res => {
         const result = Object.entries(res.data)
@@ -27,10 +28,10 @@ const More = () => {
               ...item
             }
           })
-        const foundItem = result.find(value => value.title.toLowerCase() === params.title.toLowerCase())
-        
-        setItem(foundItem)
-      })
+          const foundItem = result.find(value => value.latin.toLowerCase() === text.toLowerCase())
+          
+          setItem(foundItem)
+        })
   }, [])
 
 
