@@ -1,14 +1,16 @@
 import React from 'react'
 import c from './more.module.scss'
-import { useParams } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { API } from '../../api'
 
 const More = () => {
   const [ item, setItem ] = React.useState(null)
-  const params = useParams()
+  const location = useLocation().pathname
 
 
   React.useEffect(() => {
+
+    
     API.getNews() 
       .then(res => {
         const result = Object.entries(res.data)
@@ -17,7 +19,7 @@ const More = () => {
               ...item
             }
           })
-          const foundItem = result.find(value => value.latin.toLowerCase() === params.title.toLowerCase())
+          const foundItem = result.find(value => value.latin.toLowerCase() === location.toLowerCase())
           
           setItem(foundItem)
         })
