@@ -1,11 +1,11 @@
 import React from 'react'
 import c from './more.module.scss'
-import { useLocation } from 'react-router-dom'
+import { useLocation, useParams } from 'react-router-dom'
 import { API } from '../../api'
 
 const More = () => {
   const [ item, setItem ] = React.useState(null)
-  const location = useLocation().pathname
+  const location = useParams()
 
 
   React.useEffect(() => {
@@ -19,7 +19,7 @@ const More = () => {
               ...item
             }
           })
-          const foundItem = result.find(value => value.latin.toLowerCase() === location.toLowerCase())
+          const foundItem = result.find(value => value.latin.toLowerCase() === location.title.toLowerCase())
           
           setItem(foundItem)
         })
