@@ -7,17 +7,17 @@ const News = () => {
   const [ news, setNews ] = React.useState(null)
 
   React.useEffect(() => {
-    API.getNews() 
-      .then(res => {
-        const result = Object.entries(res.data)
-          .map(([id, item]) => {
-            return {
-              ...item
-            }
-          })
+      API.getNews() 
+        .then(res => {
+          const result = Object.entries(res.data)
+            .map(([id, item]) => {
+              return {
+                ...item
+              }
+            })
 
-        setNews(result)
-      })
+          setNews(result)
+        })
   }, [])
 
   const Navigate = useNavigate()
@@ -45,7 +45,7 @@ const News = () => {
                   <div className={c.footer_post}>
                     <button
                       onClick={() => {
-                        Navigate(`/${item.title}/`)
+                        Navigate(`/${item.title}/`);
                       }}
                     >
                       Подробнее

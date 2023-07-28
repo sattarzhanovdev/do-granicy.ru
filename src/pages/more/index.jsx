@@ -7,7 +7,17 @@ const More = () => {
   const [ item, setItem ] = React.useState(null)
   const params = useParams()
 
+  const latinToCyrillic = {
+    A: "А", B: "Б", C: "Ц", D: "Д", E: "Е", F: "Ф", G: "Г", H: "Х", I: "И", J: "Ж", K: "К", L: "Л",
+    M: "М", N: "Н", O: "О", P: "П", Q: "К", R: "Р", S: "С", T: "Т", U: "У", V: "В", W: "В", X: "Кс",
+    Y: "Ы", Z: "З",
+    CH: "Ч", SH: "Ш", SCH: "Щ", YO: "Ё", YA: "Я",
+    YU: "Ю", ZH: "Ж", KH: "Х", TS: "Ц", TH: "З", TSIA: "ЦИЯ", TSII: "ЦИИ",
+    TSIU: "ЦИЮ", TSIE: "ЦИИ", TSIIU: "ЦИЮ",
+    TSY: "ЦИ", TSYU: "ЦИЮ"
+  };
   
+
   React.useEffect(() => {
     API.getNews() 
       .then(res => {
@@ -28,7 +38,10 @@ const More = () => {
     <div className={c.more_container}>
       <div className={c.more}>
         <div className={c.head}>
-          <img src={item?.image} alt="" />
+          <img 
+            src={item?.image} 
+            alt="image" 
+          />
         </div>
         <div className={c.body}>
           <h1>{item?.title}</h1>
